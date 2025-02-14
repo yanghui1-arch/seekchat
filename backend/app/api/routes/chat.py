@@ -20,11 +20,10 @@ def chat(
     if len(content) > 300:
         return "不要发这么长的文本，这个是免费的做着玩儿的，不要让我承担这么大的成本qwq55555..."
 
-    prompt_content = "如果我叫你编写代码，你应该回复：此项目是为了让大家都体验的到deepseek强大的中文聊天能力且全由作者自费，担不起那么高的输出费用...qwq希望能够理解~~~。否则正常回答我的问题\n 我的问题：" + content
     messages = message_dbo.access_message()
     message = {
         "role": "user",
-        "content": prompt_content
+        "content": content
     }
     messages.append(message)
     message_dbo.add_message(message)
